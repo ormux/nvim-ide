@@ -26,10 +26,14 @@ keymap("n", "<C-l>", ":wincmd l<CR>", bind_opts)
 keymap("n", "<A-h>", ":bprev<CR>", bind_opts)
 keymap("n", "<A-l>", ":bnext<CR>", bind_opts)
 
+-- Tab Navigation
+keymap("n", "<A-j>", ":tabp<CR>", bind_opts)
+keymap("n", "<A-k>", ":tabn<CR>", bind_opts)
+
 -- Write/Save/Quit
 keymap("n", "<Leader>w", ":w<CR>", bind_opts)
 keymap("n", "<Leader>x", ":x<CR>", bind_opts)
-keymap("n", "<Leader>q!", ":q!<CR>", bind_opts)
+keymap("n", "<Leader>q", ":q!<CR>", bind_opts)
 
 -- INSERT --
 -- Remap Escape --
