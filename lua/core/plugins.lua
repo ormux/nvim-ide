@@ -102,6 +102,7 @@ return packer.startup(
         "iamcco/markdown-preview.nvim",
         opt = true,
         run = function() vim.fn["mkdp#util#install"]() end,
+        ft = { "markdown" },
     }
 
     if PACKER_BOOTSTRAP then
