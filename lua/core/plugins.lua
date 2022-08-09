@@ -49,14 +49,60 @@ packer.init {
 
 -- https://github.com/wbthomason/packer.nvim#bootstrapping
 return packer.startup(
-  function () 
+  function (use)
+    -- Self-manage Packer
     use "wbthomason/packer.nvim"
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
-    use "flazz/vim-colorschemes"
+    -- Colour Scheme
     use {'luisiacc/gruvbox-baby', branch = "main"}
+    -- Completion Engine
+    use { "hrsh7th/nvim-cmp", commit = "c4dcb1244a8942b8d2bd3c0a441481e12f91cdf1" }
+    use { "hrsh7th/cmp-buffer", commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" }
+    use { "hrsh7th/cmp-path", commit = "981baf9525257ac3269e1b6701e376d6fbff6921" }
+    use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
+    use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
+    use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }
+    -- Snippet Engine
+    use { "L3MON4D3/LuaSnip", commit = "be3083bbb8ebc21671bf7c91c27f043ebe0a8d8d" }
+    use "rafamadriz/friendly-snippets"
+
+    -- Language Server Protocol
+    use { "neovim/nvim-lspconfig", commit = "ba25b747a3cff70c1532c2f28fcc912cf7b938ea" }
+    use { "williamboman/nvim-lsp-installer", commit = "ff51c2173d2917517c96f22d9c21940307930b57" }
+
+    -- Syntax Highlighting
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
+
+    -- File Explorer
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
+
+    -- Null LS Formatter
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+    })
+
+    use {
+      "mattn/emmet-vim",
+      setup = function()
+        vim.g.user_emmet_mode="n"
+        vim.g.user_emmet_leader_key = ","
+      end
+    }
+
+    use {
+        "iamcco/markdown-preview.nvim",
+        opt = true,
+        run = function() vim.fn["mkdp#util#install"]() end,
+    }
 
     if PACKER_BOOTSTRAP then
       require('packer').sync()
