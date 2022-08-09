@@ -1,22 +1,26 @@
-# NVIM v0.8.0-dev
+<h1 align='center'>NVIM v0.8.0-dev</h1>
+
+<div align='center'>
 Neovim text-editor customised to be a functional IDE for coding
+</div>
 
-## Setup
-Clone this repo and place it to the `$XDG_CONFIG_HOME` location
+<h2 align='center'>Setup</h2>
 
-`git clone git@github.com:ormux/nvim-ide.git $HOME/.config/nvim`
+1. Clone this repo and place it to the `$XDG_CONFIG_HOME` location
 
-Delete the README document to prevent clutter
+* `git clone git@github.com:ormux/nvim-ide.git $HOME/.config/nvim`
 
-`rm README.md`
+2. Delete the README document to prevent clutter
 
-This allows git to ignore the changes made to the README
+* `rm README.md`
 
-`git update-index --assume-unchanged README.md`
+3. Allow git to ignore the changes made to the README
 
-## Plugins
+* `git update-index --assume-unchanged README.md`
 
-### Manager
+<h2 align='center'>Components</h2>
+
+### Plugin Manager
 * [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ### Completion
@@ -46,3 +50,8 @@ This allows git to ignore the changes made to the README
 
 ### Miscellaneous
 * [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+
+#### sources:
+<https://github.com/LunarVim/Neovim-from-scratch>  
+<https://github.com/LunarVim/nvim-basic-ide>  
+<https://github.com/rockerBOO/awesome-neovim>  
