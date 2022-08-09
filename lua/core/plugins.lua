@@ -85,6 +85,14 @@ return packer.startup(
       },
   }
 
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        setup = function() vim.g.mkdp_browser = 'qutebrowser' end,
+        opt = true,
+        ft = { "markdown" },
+    }
+
     if PACKER_BOOTSTRAP then
       require("packer").sync()
     end
