@@ -1,6 +1,8 @@
 <h1 align='center'>NVIM v0.7.2</h1>
 
+<div align='center'>
 Neovim text-editor customised to be a functional IDE for coding
+</div>
 
 <h2 align='center'>Setup</h2>
 Clone this repo and place it to the `$XDG_CONFIG_HOME` location
