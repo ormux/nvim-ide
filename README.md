@@ -5,6 +5,7 @@ Neovim text-editor customised to be a functional IDE for coding
 </div>
 
 <h2 align='center'>Setup</h2>
+
 Clone this repo and place it to the `$XDG_CONFIG_HOME` location
 
 `git clone git@github.com:ormux/nvim-ide.git $HOME/.config/nvim`
