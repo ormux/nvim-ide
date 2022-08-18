@@ -48,3 +48,6 @@ keymap("n", "<C-f>", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Null LS
 keymap("n", "<Leader>p", ":Format<CR>", opts)
+
+-- LaTeX Compile
+keymap("n", "<Leader>l", "<CMD>!xelatex '%'<CR>", opts)
