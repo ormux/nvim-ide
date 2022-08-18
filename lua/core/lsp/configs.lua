@@ -8,7 +8,8 @@ local lspconfig = require("lspconfig")
 
 local servers = {
   "sumneko_lua",
-  "tsserver"
+  "tsserver",
+  "html",
 }
 
 lsp_installer.setup {
