@@ -40,9 +40,9 @@ return packer.startup(
     use { "luisiacc/gruvbox-baby", branch = "main"}
 
     -- VSCode Colorscheme
-    use 'Mofiqul/vscode.nvim'
+    use { "Mofiqul/vscode.nvim" }
 
-  use { "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
+    use { "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
 
     -- Nvim Tree
     use {
@@ -78,12 +78,15 @@ return packer.startup(
     use { "williamboman/nvim-lsp-installer", commit = "9c022b7a21885061e88f2f08fa8c0d81fbfa119a" }
 
     -- Null LS Formatter
+    use { "jose-elias-alvarez/null-ls.nvim", commit = "5b745e5fa2a18a2c0df8966080f4321fad4f42d7" }
+
     use {
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = {
-        "nvim-lua/plenary.nvim",
-      },
-  }
+      "mattn/emmet-vim",
+      setup = function()
+        vim.g.user_emmet_mode="n"
+        vim.g.user_emmet_leader_key=","
+      end
+    }
 
     use {
         "iamcco/markdown-preview.nvim",
