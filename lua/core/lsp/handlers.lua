@@ -2,47 +2,48 @@ local M = {}
 
 -- BEGIN SETUP
 function M.setup()
-	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+  local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 
   -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#change-diagnostic-symbols-in-the-sign-column-gutter
   for type, sign in pairs(signs) do
     local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, {text = sign, texthl = hl, numhl = hl})
+    vim.fn.sign_define(hl, { text = sign, texthl = hl, numhl = hl })
   end
 
   -- https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#customizing-how-diagnostics-are-displayed
-	local config = {
-		virtual_text = false,
-		signs = {
-			active = signs,
-		},
-		update_in_insert = true,
-		underline = true,
-		severity_sort = true,
-		float = {
-			focusable = false,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
-	}
+  local config = {
+    virtual_text = false,
+    signs = {
+      active = signs,
+    },
+    update_in_insert = true,
+    underline = true,
+    severity_sort = true,
+    float = {
+      focusable = false,
+      style = "minimal",
+      border = "rounded",
+      source = "always",
+      header = "",
+      prefix = "",
+    },
+  }
 
   -- :help vim.diagnostic.config()
-	vim.diagnostic.config(config)
+  vim.diagnostic.config(config)
 
   -- :help lsp-handler-configuration
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-		width = 60,
-	})
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+    width = 60,
+  })
 
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-		width = 60,
-	})
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = "rounded",
+    width = 60,
+  })
 end
+
 -- END SETUP
 
 -- BEGIN LSP Keymaps
@@ -68,12 +69,18 @@ local function lsp_keymaps(bufnr)
   -- :help user-commands
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
+
 -- END LSP Keymaps
 
+local block_formatting = {
+  "tsserver", "html"
+}
 function M.on_attach(client, bufnr)
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+  for _, server_name in ipairs(block_formatting) do
+    if client.name == server_name then
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end
   end
   lsp_keymaps(bufnr)
 end
