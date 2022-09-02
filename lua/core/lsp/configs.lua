@@ -10,6 +10,7 @@ local servers = {
   "sumneko_lua",
   "tsserver",
   "html",
+  "bashls",
 }
 
 lsp_installer.setup {
