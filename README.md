@@ -47,6 +47,7 @@ Allow git to ignore the changes made to the README
 ### Snippets
 * [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 * [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+* [Emmet-vim](https://github.com/mattn/emmet-vim)
 
 ### Miscellaneous
 * [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
