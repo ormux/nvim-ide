@@ -2,7 +2,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = "'"
 
 -- n = normal
 -- i = insert
@@ -11,8 +11,7 @@ vim.g.maplocalleader = ","
 -- t = terminal
 -- c = commmand
 
-keymap("n", ";", ":", opts)
-keymap("i", "jk", "<ESC>", opts);
+keymap("i", "jk", "<ESC>", opts)
 
 -- Split Navigation
 keymap("n", "<C-h>", "<CMD>wincmd h<CR>", opts)
@@ -36,8 +35,8 @@ keymap("n", "<Leader>x", "<CMD>exit<CR>", opts)
 keymap("n", "<Leader>q", "<CMD>quit!<CR>", opts)
 
 -- Automatic Brace
-keymap("n", "<LocalLeader>.", "A<SPACE>{<CR>}<ESC>ko", opts)
-keymap("i", "<LocalLeader>.", "<ESC>A{<CR>}<ESC>ko", opts)
+keymap("n", "<Leader>.", "A<SPACE>{<CR>}<ESC>ko", opts)
+keymap("i", "<Leader>.", "<ESC>A{<CR>}<ESC>ko", opts)
 
 -- https://vim.fandom.com/wiki/Moving_lines_up_or_down
 keymap("v", "<S-j>", ":move '>+1<CR>gv-gv", opts)
