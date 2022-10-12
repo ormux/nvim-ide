@@ -49,3 +49,4 @@ keymap("n", "<Leader>p", ":Format<CR>", opts)
 
 -- LaTeX Compile
 keymap("n", "<Leader>l", "<CMD>!xelatex '%'<CR>", opts)
+keymap("n", "<Leader>k", "<CMD>!xelatex --shell-escape 'main'<CR>", opts)
