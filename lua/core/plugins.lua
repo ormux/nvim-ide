@@ -75,7 +75,7 @@ return packer.startup(
       "mattn/emmet-vim",
       setup = function()
         vim.g.user_emmet_mode = "n"
-        vim.g.user_emmet_leader_key = "'"
+        vim.g.user_emmet_leader_key = ","
       end
     }
 
