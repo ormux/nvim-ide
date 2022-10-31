@@ -98,12 +98,11 @@ return packer.startup(
       end
     }
 
-    use {
-        "iamcco/markdown-preview.nvim",
-        opt = true,
-        run = function() vim.fn["mkdp#util#install"]() end,
-        ft = { "markdown" },
-    }
+   use {
+       "iamcco/markdown-preview.nvim",
+       run = function() vim.fn["mkdp#util#install"]() end,
+       ft = { "markdown" },
+   }
 
     if PACKER_BOOTSTRAP then
       require('packer').sync()
