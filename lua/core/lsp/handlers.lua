@@ -78,8 +78,8 @@ local block_formatting = {
 function M.on_attach(client, bufnr)
   for _, server_name in ipairs(block_formatting) do
     if client.name == server_name then
-      client.resolved_capabilities.document_formatting = false
-      client.resolved_capabilities.document_range_formatting = false
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
     end
   end
   lsp_keymaps(bufnr)
