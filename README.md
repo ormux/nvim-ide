@@ -41,9 +41,10 @@ Allow git to ignore the changes made to the README
 ### Syntax
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-### LSP
+### LSP/DAP
+* [mason](https://github.com/williamboman/mason.nvim)
+* [mason-lspconfig](https://github.com/williamboman/mason-lspconfig)
 * [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-* [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 
 ### Snippets
 * [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
