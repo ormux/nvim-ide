@@ -4,5 +4,4 @@ if not status_ok then
   return
 end
 
-require "core.lsp.configs"
 require("core.lsp.handlers").setup()

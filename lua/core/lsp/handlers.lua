@@ -67,7 +67,7 @@ local function lsp_keymaps(bufnr)
   keymap('n', 'K', vim.lsp.buf.hover, bufopts)
   keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   -- :help user-commands
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
 end
 
 -- END LSP Keymaps
@@ -92,6 +92,6 @@ if not cmp_status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
