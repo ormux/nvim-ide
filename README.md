@@ -1,4 +1,4 @@
-<h1 align='center'>NVIM v0.7.2</h1>
+<h1 align='center'>NVIM v0.8.3</h1>
 
 <div align='center'>
 Neovim text-editor customised to be a functional IDE for coding
@@ -8,7 +8,8 @@ Neovim text-editor customised to be a functional IDE for coding
 
 Clone this repo and place it to the `$XDG_CONFIG_HOME` location
 
-`git clone git@github.com:ormux/nvim-ide.git $HOME/.config/nvim`
+`cd $XDG_CONFIG_HOME`  
+`git clone git@github.com:tatumroaquin/nvim.git`
 
 Delete the README document to prevent clutter
 
