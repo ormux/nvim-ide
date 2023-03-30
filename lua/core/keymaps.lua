@@ -26,8 +26,9 @@ keymap("n", "<A-k>", "<CMD>tabnext<CR>", opts)
 --keymap("n", "<Leader>l", "<CMD>tabnext<CR>", opts)
 
 -- Buffer Navigation
-keymap("n", "<A-h>", "<CMD>bnext<CR>", opts)
-keymap("n", "<A-l>", "<CMD>bprev<CR>", opts)
+keymap("n", "<A-h>", "<CMD>bprev<CR>", opts)
+keymap("n", "<A-l>", "<CMD>bnext<CR>", opts)
+keymap("n", "<Leader>d", "<CMD>bdelete<CR>", opts)
 
 -- File Input/Output
 keymap("n", "<Leader>w", "<CMD>write<CR>", opts)
@@ -42,7 +43,8 @@ keymap("v", "<S-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("v", "<S-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Nvim Tree
-keymap("n", "<C-f>", "<CMD>NvimTreeToggle<CR>", opts)
+-- keymap("n", "<C-f>", "<CMD>NvimTreeToggle<CR>", opts)
+keymap("n", "<Leader>t", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Null LS
 keymap("n", "<Leader>p", ":Format<CR>", opts)
