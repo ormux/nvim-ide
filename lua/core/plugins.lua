@@ -59,6 +59,12 @@ return packer.startup(
       tag = 'nightly',
     }
 
+    -- Bufferline
+    use {
+      'akinsho/bufferline.nvim',
+      tag = "v3.*",
+    }
+
     -- Treesitter
     use {
       'nvim-treesitter/nvim-treesitter',
