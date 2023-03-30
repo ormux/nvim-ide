@@ -15,11 +15,13 @@ local lspconfig = require("lspconfig")
 
 local servers = {
   "bashls",
+  "clangd",
   "cssls",
   "html",
   "jsonls",
   "lua_ls",
   "tsserver",
+  "pylsp"
 }
 
 mason.setup {
