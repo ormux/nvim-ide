@@ -22,6 +22,13 @@ local options = {
   termguicolors = true,
   undofile = true,
   wrap = true,
+  syntax = 'on',
+}
+
+vim.g.OmniSharp_server_use_net6 = 1
+
+vim.g.ale_linters = {
+ cs = {'OmniSharp'}
 }
 
 for key, val in pairs(options) do

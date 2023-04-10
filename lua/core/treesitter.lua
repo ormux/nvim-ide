@@ -1,26 +1,22 @@
 local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
-  vim.notify [[failed to load treesitter]]
+  vim.notify([[failed to load treesitter]])
   return
 end
 
-treesitter.setup {
+treesitter.setup({
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "cpp", "lua", "javascript", "typescript", "html" },
-
+  ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "javascript", "typescript", "html" },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
-
   -- Automatically install missing parsers when entering buffer
   auto_install = true,
-
   -- List of parsers to ignore installing (for "all")
   -- ignore_install = { "c" },
 
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
-
     -- list of language that will be disabled
     -- disable = { "c" },
 
@@ -33,5 +29,5 @@ treesitter.setup {
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
-  }
-}
+  },
+})
