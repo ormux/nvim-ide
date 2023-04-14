@@ -123,6 +123,8 @@ return packer.startup(function(use)
 
 	use({ "neoclide/coc.nvim", branch = "release" })
 
+  use { 'nvim-lualine/lualine.nvim' }
+
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
