@@ -21,7 +21,10 @@ null_ls.setup({
     }),
     formatting.black,
     formatting.latexindent,
+    formatting.shfmt,
+    diagnostic.cpplint,
     diagnostic.eslint,
     diagnostic.selene
+    diagnostic.shellcheck,
   },
 })
