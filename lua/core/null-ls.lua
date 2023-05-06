@@ -20,6 +20,8 @@ null_ls.setup({
       }
     }),
     formatting.black,
-    diagnostic.cpplint,
+    formatting.latexindent,
+    diagnostic.eslint,
+    diagnostic.selene
   },
 })
