@@ -11,20 +11,22 @@ local diagnostic = null_ls.builtins.diagnostics
 null_ls.setup({
   sources = {
     formatting.prettier.with({
-      extra_args = { "--single-quote", "--jsx-single-quote" }
+      extra_args = { "--single-quote", "--jsx-single-quote" },
     }),
     formatting.stylua,
     formatting.clang_format.with({
       filetypes = {
-        'c', 'cc', 'cpp'
-      }
+        "c",
+        "cc",
+        "cpp",
+      },
     }),
     formatting.black,
     formatting.latexindent,
     formatting.shfmt,
     diagnostic.cpplint,
     diagnostic.eslint,
-    diagnostic.selene
+    diagnostic.selene,
     diagnostic.shellcheck,
   },
 })
