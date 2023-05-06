@@ -46,4 +46,5 @@ return {
   { "MunifTanjim/nui.nvim",                        commit = "698e75814cd7c56b0dd8af4936bcef2d13807f3c" },
   { "rcarriga/nvim-notify",                        commit = "159c6cf1be25a933f35e97499314c9faab55c98f" },
   { "folke/noice.nvim",                            commit = "6a7649413ef61123c333f422ee95840c04ece161" },
+  "folke/which-key.nvim",
 }
