@@ -19,6 +19,9 @@ keymap("n", "<C-j>", "<CMD>wincmd j<CR>", opts)
 keymap("n", "<C-k>", "<CMD>wincmd k<CR>", opts)
 keymap("n", "<C-l>", "<CMD>wincmd l<CR>", opts)
 
+keymap("n", "<leader>vs", "<CMD>vsplit<CR>", opts)
+keymap("n", "<leader>hs", "<CMD>split<CR>", opts)
+
 -- Tab Navigation
 keymap("n", "<A-j>", "<CMD>tabprev<CR>", opts)
 keymap("n", "<A-k>", "<CMD>tabnext<CR>", opts)
