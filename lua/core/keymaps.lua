@@ -31,12 +31,12 @@ keymap("n", "<A-k>", "<CMD>tabnext<CR>", opts)
 -- Buffer Navigation
 keymap("n", "<A-h>", "<CMD>bprev<CR>", opts)
 keymap("n", "<A-l>", "<CMD>bnext<CR>", opts)
-keymap("n", "<Leader>d", "<CMD>bdelete<CR>", opts)
+keymap("n", "<leader>d", "<CMD>bdelete<CR>", opts)
 
 -- File Input/Output
-keymap("n", "<Leader>w", "<CMD>write<CR>", opts)
-keymap("n", "<Leader>x", "<CMD>exit<CR>", opts)
-keymap("n", "<Leader>q", "<CMD>quit!<CR>", opts)
+keymap("n", "<leader>w", "<CMD>write<CR>", opts)
+keymap("n", "<leader>x", "<CMD>exit<CR>", opts)
+keymap("n", "<leader>q", "<CMD>quit!<CR>", opts)
 
 -- Automatic Brace
 keymap("i", ",.", "<ESC>A{<CR>}<ESC>ko", opts)
@@ -47,11 +47,17 @@ keymap("v", "<S-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Nvim Tree
 -- keymap("n", "<C-f>", "<CMD>NvimTreeToggle<CR>", opts)
-keymap("n", "<Leader>t", "<CMD>NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>t", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Null LS
-keymap("n", "<Leader>p", ":Format<CR>", opts)
+keymap("n", "<leader>p", ":Format<CR>", opts)
 
 -- LaTeX Compile
-keymap("n", "<Leader>l", "<CMD>!xelatex '%'<CR>", opts)
-keymap("n", "<Leader>k", "<CMD>!xelatex --shell-escape 'main'<CR>", opts)
+keymap("n", "<leader>l", "<CMD>!xelatex '%'<CR>", opts)
+keymap("n", "<leader>k", "<CMD>!xelatex --shell-escape 'main'<CR>", opts)
+
+-- Telescope
+keymap('n', '<leader>ff', '<CMD>Telescope find_files<CR>', opts)
+keymap('n', '<leader>fg', '<CMD>Telescope live_grep<CR>', opts)
+keymap('n', '<leader>fb', '<CMD>Telescope buffers<CR>', opts)
+keymap('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
