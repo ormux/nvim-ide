@@ -4,7 +4,7 @@ return {
   "nvim-lua/plenary.nvim",
   "nvim-tree/nvim-web-devicons",
   { "nvim-tree/nvim-tree.lua",         tag = "nightly" },
-  { "akinsho/bufferline.nvim",         tag = "v3.*" },
+  { "akinsho/bufferline.nvim",         version = "*" },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   "L3MON4D3/LuaSnip",
   {
@@ -47,4 +47,5 @@ return {
   { "rcarriga/nvim-notify",                        commit = "159c6cf1be25a933f35e97499314c9faab55c98f" },
   { "folke/noice.nvim",                            commit = "6a7649413ef61123c333f422ee95840c04ece161" },
   "folke/which-key.nvim",
+  "NvChad/nvim-colorizer.lua"
 }
