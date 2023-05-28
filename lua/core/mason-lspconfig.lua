@@ -10,13 +10,13 @@ local lspconfig = require("lspconfig")
 local servers = {
   "bashls",
   "clangd",
+  "csharp_ls",
   "cssls",
   "html",
   "jsonls",
   "lua_ls",
-  "tsserver",
   "pylsp",
-  "csharp_ls",
+  "tsserver",
 }
 
 mason_lspconfig.setup({

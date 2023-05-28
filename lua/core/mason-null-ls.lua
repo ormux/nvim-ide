@@ -4,5 +4,16 @@ if not status_ok then
 	return
 end
 mason_null_ls.setup({
- ensure_installed = { "black", "clang-format", "csharpier", "latextindent", "luaformatter", "shfmt", "stylua" } 
+	ensure_installed = {
+		"black",
+		"clang-format",
+		"csharpier",
+		"latextindent",
+		-- "luaformatter",
+		"shfmt",
+		"stylua",
+		"cpplint",
+		"selene",
+		"shellcheck",
+	},
 })

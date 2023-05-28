@@ -31,7 +31,7 @@ keymap("n", "<A-k>", "<CMD>tabnext<CR>", opts)
 -- Buffer Navigation
 keymap("n", "<A-h>", "<CMD>bprev<CR>", opts)
 keymap("n", "<A-l>", "<CMD>bnext<CR>", opts)
-keymap("n", "<leader>d", "<CMD>bdelete<CR>", opts)
+keymap("n", "<leader>bd", "<CMD>bdelete<CR>", opts)
 
 -- File Input/Output
 keymap("n", "<leader>w", "<CMD>write<CR>", opts)
@@ -67,5 +67,5 @@ keymap('n', '<leader>dt', "<CMD>DapToggleBreakpoint<CR>", opts)
 keymap('n', '<leader>dc', "<CMD>DapContinue<CR>", opts)
 keymap('n', '<leader>dv', "<CMD>DapStepOver<CR>", opts)
 keymap('n', '<leader>dq', "<CMD>DapTerminate<CR>", opts)
--- keymap('n', '<leader>dg', "<CMD>DapStepInto<CR>", opts)
--- keymap('n', '<leader>df', "<CMD>DapStepOut<CR>", opts)
+keymap('n', '<leader>di', "<CMD>DapStepInto<CR>", opts)
+keymap('n', '<leader>do', "<CMD>DapStepOut<CR>", opts)
