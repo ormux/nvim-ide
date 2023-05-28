@@ -13,6 +13,7 @@ return {
 			vim.g.user_emmet_mode = "n"
 			vim.g.user_emmet_leader_key = ","
 		end,
+    lazy = true
 	},
 
 	-- Completion
@@ -25,7 +26,7 @@ return {
 	"rafamadriz/friendly-snippets",
 
 	"neovim/nvim-lspconfig",
-	"jose-elias-alvarez/null-ls.nvim",
+  { "jose-elias-alvarez/null-ls.nvim", lazy = true },
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
@@ -41,14 +42,16 @@ return {
 	"jay-babu/mason-null-ls.nvim",
 
 	"numToStr/Comment.nvim",
-	"JoosepAlviste/nvim-ts-context-commentstring",
+  { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
 	"nvim-telescope/telescope.nvim",
 	"nvim-lualine/lualine.nvim",
+
+  -- Noice.nvim
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",
 	"folke/noice.nvim",
-	"folke/which-key.nvim",
-	"NvChad/nvim-colorizer.lua",
+  { "folke/which-key.nvim", lazy = true },
+  { "NvChad/nvim-colorizer.lua", lazy = true },
 
 	-- Debugging
 	"mfussenegger/nvim-dap",
