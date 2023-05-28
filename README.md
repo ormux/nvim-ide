@@ -6,6 +6,12 @@ Tatum's personal neovim text-editor customised to be a functional IDE for coding
 
 <hr />
 
+<div align='center'>
+<img src="./images/nvim-tree.png" alt="nvim-tree demo" />
+<img src="./images/nvim-dap.png" alt="nvim-dap demo" />
+<img src="./images/noice.png" alt="noice demo" />
+</div>
+
 <h2 align='center'>Setup</h2>
 
 1. Clone this repo and place it to the `$XDG_CONFIG_HOME` location
