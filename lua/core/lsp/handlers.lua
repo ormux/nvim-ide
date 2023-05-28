@@ -54,33 +54,40 @@ local function lsp_keymaps(bufnr)
   -- different from nvim_buf_set_keymap, it maps to lua functions directly
   local keymap = vim.keymap.set -- :help lua-keymap
 
-  keymap('n', '[d', vim.diagnostic.goto_prev, defopts)
-  keymap('n', ']d', vim.diagnostic.goto_next, defopts)
-  keymap('n', 'gl', vim.diagnostic.open_float, defopts)
-  keymap('n', '<LocalLeader>q', vim.diagnostic.setloclist, defopts)
+  keymap("n", "[d", vim.diagnostic.goto_prev, defopts)
+  keymap("n", "]d", vim.diagnostic.goto_next, defopts)
+  keymap("n", "gl", vim.diagnostic.open_float, defopts)
+  keymap("n", "<LocalLeader>q", vim.diagnostic.setloclist, defopts)
 
-  keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
-  keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  keymap('n', 'gr', vim.lsp.buf.references, bufopts)
+  keymap("n", "gD", vim.lsp.buf.declaration, bufopts)
+  keymap("n", "gd", vim.lsp.buf.definition, bufopts)
+  keymap("n", "gi", vim.lsp.buf.implementation, bufopts)
+  keymap("n", "gr", vim.lsp.buf.references, bufopts)
 
-  keymap('n', 'K', vim.lsp.buf.hover, bufopts)
-  keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  keymap("n", "K", vim.lsp.buf.hover, bufopts)
+  keymap("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
   -- :help user-commands
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
+  vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 end
 
 -- END LSP Keymaps
 
 local block_formatting = {
-  "tsserver", "html"
+  "tsserver",
+  "html",
+	"csharp_ls",
+  "lua_ls"
 }
+
 function M.on_attach(client, bufnr)
   for _, server_name in ipairs(block_formatting) do
     if client.name == server_name then
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
     end
+    -- if client.name == "omnisharp" then
+    --   client.server_capabilities.semanticTokensProvider = nil
+    -- end
   end
   lsp_keymaps(bufnr)
 end
@@ -88,7 +95,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_status_ok then
-  vim.notify [[failed to load cmp-nvim-lsp.]]
+  vim.notify([[failed to load cmp-nvim-lsp.]])
   return
 end
 

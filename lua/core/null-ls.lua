@@ -14,19 +14,28 @@ null_ls.setup({
       extra_args = { "--single-quote", "--jsx-single-quote" },
     }),
     formatting.stylua,
-    formatting.clang_format.with({
-      filetypes = {
-        "c",
-        "cc",
-        "cpp",
-      },
-    }),
+    -- formatting.clang_format.with({
+    --   extra_args = { "--style", "{IndentWidth: 1}" },
+    -- }),
+    formatting.csharpier,
     formatting.black,
     formatting.latexindent,
-    formatting.shfmt,
+    formatting.shfmt.with({
+      filetypes = {
+        "sh",
+        "zsh",
+        "bash",
+      },
+    }),
     diagnostic.cpplint,
     diagnostic.eslint,
     diagnostic.selene,
-    diagnostic.shellcheck,
+    diagnostic.shellcheck.with({
+      filetypes = {
+        "sh",
+        "zsh",
+        "bash",
+      },
+    }),
   },
 })

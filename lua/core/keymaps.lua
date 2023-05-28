@@ -61,3 +61,11 @@ keymap('n', '<leader>ff', '<CMD>Telescope find_files<CR>', opts)
 keymap('n', '<leader>fg', '<CMD>Telescope live_grep<CR>', opts)
 keymap('n', '<leader>fb', '<CMD>Telescope buffers<CR>', opts)
 keymap('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
+
+-- Nvim DAP
+keymap('n', '<leader>dt', "<CMD>DapToggleBreakpoint<CR>", opts)
+keymap('n', '<leader>dc', "<CMD>DapContinue<CR>", opts)
+keymap('n', '<leader>dv', "<CMD>DapStepOver<CR>", opts)
+keymap('n', '<leader>dq', "<CMD>DapTerminate<CR>", opts)
+-- keymap('n', '<leader>dg', "<CMD>DapStepInto<CR>", opts)
+-- keymap('n', '<leader>df', "<CMD>DapStepOut<CR>", opts)
