@@ -65,7 +65,7 @@ local function lsp_keymaps(bufnr)
   keymap("n", "gr", vim.lsp.buf.references, bufopts)
 
   keymap("n", "K", vim.lsp.buf.hover, bufopts)
-  keymap("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+  keymap("n", "<localleader>k", vim.lsp.buf.signature_help, bufopts)
   -- :help user-commands
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 end
