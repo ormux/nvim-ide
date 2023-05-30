@@ -25,6 +25,7 @@ return {
 			name = "Launch file",
 			program = "${file}",
 			cwd = "${workspaceFolder}",
+			console = "integratedTerminal",
 		},
 	},
 }
