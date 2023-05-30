@@ -19,6 +19,12 @@ keymap("n", "<C-j>", "<CMD>wincmd j<CR>", opts)
 keymap("n", "<C-k>", "<CMD>wincmd k<CR>", opts)
 keymap("n", "<C-l>", "<CMD>wincmd l<CR>", opts)
 
+--https://github.com/rcarriga/nvim-dap-ui/issues/243#issuecomment-1441514038
+keymap("t", "<C-h>", "<CMD>wincmd h<CR>", opts)
+keymap("t", "<C-j>", "<CMD>wincmd j<CR>", opts)
+keymap("t", "<C-k>", "<CMD>wincmd k<CR>", opts)
+keymap("t", "<C-l>", "<CMD>wincmd l<CR>", opts)
+
 keymap("n", "<leader>vs", "<CMD>vsplit<CR>", opts)
 keymap("n", "<leader>hs", "<CMD>split<CR>", opts)
 
@@ -45,12 +51,18 @@ keymap("i", ",.", "<ESC>A{<CR>}<ESC>ko", opts)
 keymap("v", "<S-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("v", "<S-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- Window Resize
+keymap("n", "<S-h>", "<CMD>vertical-resize -2<CR>", opts)
+keymap("n", "<S-j>", "<CMD>resize -1<CR>", opts)
+keymap("n", "<S-k>", "<CMD>resize +1<CR>", opts)
+keymap("n", "<S-l>", "<CMD>vertical-resize +2<CR>", opts)
+
 -- Nvim Tree
 -- keymap("n", "<C-f>", "<CMD>NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>t", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Null LS
-keymap("n", "<leader>p", ":Format<CR>", opts)
+keymap("n", "<leader>F", ":Format<CR>", opts)
 
 -- LaTeX Compile
 keymap("n", "<leader>l", "<CMD>!xelatex '%'<CR>", opts)
@@ -66,6 +78,5 @@ keymap('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
 keymap('n', '<leader>dt', "<CMD>DapToggleBreakpoint<CR>", opts)
 keymap('n', '<leader>dc', "<CMD>DapContinue<CR>", opts)
 keymap('n', '<leader>dv', "<CMD>DapStepOver<CR>", opts)
-keymap('n', '<leader>dq', "<CMD>DapTerminate<CR>", opts)
 keymap('n', '<leader>di', "<CMD>DapStepInto<CR>", opts)
 keymap('n', '<leader>do', "<CMD>DapStepOut<CR>", opts)
