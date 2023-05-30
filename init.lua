@@ -10,6 +10,7 @@ require "core.bufferline"
 require "core.lualine"
 require "core.treesitter"
 require "core.comment"
+require "core.indent-blankline"
 
 require "core.notify"
 require "core.noice"
