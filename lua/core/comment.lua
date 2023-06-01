@@ -19,7 +19,7 @@ comment.setup {
     block = '<C-x>',
   },
   opleader = {
-    line = 'gc',
+    line = 'ge',
     block = 'gb',
   },
   extra = {

@@ -60,9 +60,7 @@ vim.fn.sign_define(
 )
 vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
 
-vim.keymap.set("n", "<leader>dl", require("dap.ui.widgets").hover)
-
--- utility functions
+-- Utility functions
 local function dap_clear_breakpoints()
 	dap.clear_breakpoints()
 	vim.notify([[Breakpoints cleared]], "warn")
@@ -75,6 +73,28 @@ local function dap_terminate()
 	end)
 end
 
--- Customer Lua Keybindings
-vim.keymap.set("n", "<leader>dw", dap_clear_breakpoints)
-vim.keymap.set("n", "<leader>dq", dap_terminate)
+-- DAP Keymaps
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
+local widgets = require("dap.ui.widgets")
+
+keymap("n", "<leader>db", dap.toggle_breakpoint, opts)
+keymap("n", "<leader>dc", dap.continue, opts)
+keymap("n", "<leader>dv", dap.step_over, opts)
+keymap("n", "<leader>di", dap.step_into, opts)
+keymap("n", "<leader>do", dap.step_out, opts)
+keymap("n", "<leader>dw", dap_clear_breakpoints, opts)
+keymap("n", "<leader>dq", dap_terminate, opts)
+keymap("n", "<Leader>dp", function()
+	dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+end, opts)
+keymap("n", "<Leader>dr", dap.repl.open, opts)
+keymap("n", "<Leader>dl", dap.run_last, opts)
+keymap({ "n", "v" }, "<Leader>dh", widgets.hover, opts)
+keymap({ "n", "v" }, "<Leader>dp", widgets.preview, opts)
+keymap("n", "<Leader>df", function()
+	widgets.centered_float(widgets.frames)
+end, opts)
+keymap("n", "<Leader>ds", function()
+	widgets.centered_float(widgets.scopes)
+end, opts)

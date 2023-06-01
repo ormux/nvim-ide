@@ -48,8 +48,8 @@ keymap("n", "<leader>q", "<CMD>quit!<CR>", opts)
 keymap("i", ",.", "<ESC>A{<CR>}<ESC>ko", opts)
 
 -- https://vim.fandom.com/wiki/Moving_lines_up_or_down
-keymap("v", "<S-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("v", "<S-k>", ":move '<-2<CR>gv-gv", opts)
+-- keymap("v", "<S-j>", ":move '>+1<CR>gv-gv", opts)
+-- keymap("v", "<S-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Window Resize
 keymap("n", "<S-h>", "<CMD>vertical-resize -2<CR>", opts)
@@ -73,10 +73,3 @@ keymap('n', '<leader>ff', '<CMD>Telescope find_files<CR>', opts)
 keymap('n', '<leader>fg', '<CMD>Telescope live_grep<CR>', opts)
 keymap('n', '<leader>fb', '<CMD>Telescope buffers<CR>', opts)
 keymap('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
-
--- Nvim DAP
-keymap('n', '<leader>dt', "<CMD>DapToggleBreakpoint<CR>", opts)
-keymap('n', '<leader>dc', "<CMD>DapContinue<CR>", opts)
-keymap('n', '<leader>dv', "<CMD>DapStepOver<CR>", opts)
-keymap('n', '<leader>di', "<CMD>DapStepInto<CR>", opts)
-keymap('n', '<leader>do', "<CMD>DapStepOut<CR>", opts)
