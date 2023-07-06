@@ -1,7 +1,7 @@
 local options = {
 	autoindent = true,
 	backup = false,
-	clipboard = "unnamed,unnamedplus",
+	-- clipboard = "unnamed,unnamedplus",
 	errorbells = false,
 	expandtab = true,
 	hlsearch = true,
