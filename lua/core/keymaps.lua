@@ -13,6 +13,7 @@ vim.g.maplocalleader = "\\"
 
 keymap("i", "jk", "<ESC>", opts)
 keymap("n", "<leader>y", [["+y]], opts)
+keymap("v", "<leader>y", [["+y]], opts)
 
 -- Split Navigation
 keymap("n", "<C-h>", "<CMD>wincmd h<CR>", opts)
