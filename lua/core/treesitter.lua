@@ -1,37 +1,79 @@
 local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
-  vim.notify [[failed to load treesitter]]
-  return
+	vim.notify([[failed to load treesitter]])
+	return
 end
 
-treesitter.setup {
-  -- A list of parser names, or "all"
-  ensure_installed = { "c", "cpp", "lua", "javascript", "typescript", "html" },
+treesitter.setup({
+	ensure_installed = { "c", "cpp", "lua", "javascript", "typescript", "html" },
+	sync_install = false,
+	auto_install = true,
 
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  auto_install = true,
-
-  -- List of parsers to ignore installing (for "all")
-  -- ignore_install = { "c" },
-
-  highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
-
-    -- list of language that will be disabled
-    -- disable = { "c" },
-
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  }
-}
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+	indent = { enable = true },
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
+	textobjects = {
+		select = {
+			enable = true,
+			lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+			keymaps = {
+				["aa"] = "@parameter.outer",
+				["ia"] = "@parameter.inner",
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+				["ii"] = "@conditional.inner",
+				["ai"] = "@conditional.outer",
+				["il"] = "@loop.inner",
+				["al"] = "@loop.outer",
+				["at"] = "@comment.outer",
+			},
+			selection_modes = {
+				["@function.outer"] = "v", -- linewise
+				["@function.inner"] = "v", -- linewise
+			},
+		},
+		move = {
+			enable = true,
+			set_jumps = true, -- whether to set jumps in the jumplist
+			goto_next_start = {
+				["]m"] = "@function.outer",
+				["]]"] = "@class.outer",
+			},
+			goto_next_end = {
+				["]M"] = "@function.outer",
+				["]["] = "@class.outer",
+			},
+			goto_previous_start = {
+				["[m"] = "@function.outer",
+				["[["] = "@class.outer",
+			},
+			goto_previous_end = {
+				["[M"] = "@function.outer",
+				["[]"] = "@class.outer",
+			},
+			-- goto_next = {
+			--   [']i'] = "@conditional.inner",
+			-- },
+			-- goto_previous = {
+			--   ['[i'] = "@conditional.inner",
+			-- }
+		},
+		swap = {
+			enable = true,
+			swap_next = {
+				["<leader>a"] = "@parameter.inner",
+			},
+			swap_previous = {
+				["<leader>A"] = "@parameter.inner",
+			},
+		},
+	},
+})

@@ -14,6 +14,7 @@ return {
 
 	-- Syntax Highlighting
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
 	-- Emmet Tool
 	{
@@ -72,7 +73,7 @@ return {
 	"MunifTanjim/nui.nvim",
 	"rcarriga/nvim-notify",
 	"folke/noice.nvim",
-	{ "folke/which-key.nvim" },
+	{ "folke/which-key.nvim", lazy = true },
 	{ "NvChad/nvim-colorizer.lua" },
 
 	-- Nvim DAP
@@ -81,5 +82,5 @@ return {
 	{ "jay-babu/mason-nvim-dap.nvim" },
 
 	-- Indentation Lines
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 }
