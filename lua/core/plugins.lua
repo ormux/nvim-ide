@@ -7,7 +7,7 @@ return {
 	"nvim-tree/nvim-web-devicons",
 
 	-- File Tree
-	{ "nvim-tree/nvim-tree.lua", tag = "nightly" },
+	{ "nvim-tree/nvim-tree.lua", version = "*" },
 
 	-- Tabs for Buffers
 	{ "akinsho/bufferline.nvim", version = "*" },
