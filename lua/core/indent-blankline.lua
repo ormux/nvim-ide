@@ -7,6 +7,6 @@ end
 -- vim.cmd.highlight("default link IndentLine Comment")
 
 indent_blankline.setup({
-	scope = { enabled = true },
+	scope = { enabled = false },
 	indent = { char = "▏" },
 })
