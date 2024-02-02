@@ -16,6 +16,9 @@ return {
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
+  -- HTTP REST CLIENT
+  "rest-nvim/rest.nvim",
+
 	-- Emmet Tool
 	{
 		"mattn/emmet-vim",
@@ -38,15 +41,15 @@ return {
 	"saadparwaiz1/cmp_luasnip",
 
 	"neovim/nvim-lspconfig",
-	{ "jose-elias-alvarez/null-ls.nvim" },
+	-- { "jose-elias-alvarez/null-ls.nvim" },
+  "nvimtools/none-ls.nvim",
 	{
 		"iamcco/markdown-preview.nvim",
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-		config = function()
-			vim.g.mkdp_browser = "qutebrowser"
-		end,
+    build = function() vim.fn["mkdp#util#install"]() end,
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		-- config = function()
+		-- 	vim.g.mkdp_browser = "qutebrowser"
+		-- end,
 		ft = { "markdown" },
 	},
 
@@ -61,7 +64,7 @@ return {
 
 	-- Auto Comments
 	"numToStr/Comment.nvim",
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
+	"JoosepAlviste/nvim-ts-context-commentstring",
 
 	-- File Finding
 	"nvim-telescope/telescope.nvim",
@@ -83,4 +86,14 @@ return {
 
 	-- Indentation Lines
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+
+  --TPope Stuff
+  -- Vim Database Integration
+  "tpope/vim-dadbod",
+  -- Vim Git Integration
+  "tpope/vim-fugitive",
+
+  -- Tmux stuff
+  "christoomey/vim-tmux-navigator"
 }
