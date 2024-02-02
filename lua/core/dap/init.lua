@@ -6,7 +6,7 @@ M.setup = function(dap)
     "cs"
 	}
 	for _, language in pairs(languages) do
-		local has_debugger,debugger = pcall(require, "core.dap.adapters.".. language)
+		local has_debugger, debugger = pcall(require, "core.dap.adapters." .. language)
 
 		if has_debugger then
 			dap.adapters[debugger.name] = debugger.adapter
