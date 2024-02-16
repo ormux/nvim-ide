@@ -53,17 +53,17 @@ keymap("i", ",.", "<ESC>A{<CR>}<ESC>ko", opts)
 -- keymap("v", "<S-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Window Resize
-keymap("n", "<C-S-h>", "<CMD>vertical-resize -2<CR>", opts)
-keymap("n", "<C-S-j>", "<CMD>resize -1<CR>", opts)
-keymap("n", "<C-S-k>", "<CMD>resize +1<CR>", opts)
-keymap("n", "<C-S-l>", "<CMD>vertical-resize +2<CR>", opts)
+keymap("n", "<C-Left>", "<CMD>vertical-resize -2<CR>", opts)
+keymap("n", "<C-Down>", "<CMD>resize -1<CR>", opts)
+keymap("n", "<C-Up>", "<CMD>resize +1<CR>", opts)
+keymap("n", "<C-Right>", "<CMD>vertical-resize +2<CR>", opts)
 
 -- Nvim Tree
 -- keymap("n", "<C-f>", "<CMD>NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>t", "<CMD>NvimTreeToggle<CR>", opts)
 
--- Null LS
-keymap("n", "<leader>F", ":Format<CR>", opts)
+-- Conform.nvim
+keymap("n", "<leader>F", '<CMD>lua require("conform").format()<CR>', opts)
 
 -- LaTeX Compile
 keymap("n", "<leader>l", "<CMD>!xelatex '%'<CR>", opts)
