@@ -5,6 +5,6 @@ if not status_ok then
 end
 
 mason_nvim_dap.setup({
-  ensure_installed = { "js", "coreclr" },
+  ensure_installed = { "js-debug-adapter", "netcoredbg" },
   automatic_installation = true
 })

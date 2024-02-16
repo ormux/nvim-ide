@@ -42,7 +42,7 @@ return {
 
 	"neovim/nvim-lspconfig",
 	-- { "jose-elias-alvarez/null-ls.nvim" },
-  "nvimtools/none-ls.nvim",
+  -- "nvimtools/none-ls.nvim",
 	{
 		"iamcco/markdown-preview.nvim",
     build = function() vim.fn["mkdp#util#install"]() end,
@@ -60,7 +60,7 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 
 	-- Mason Autoinstall Code Formatters
-	"jay-babu/mason-null-ls.nvim",
+	-- "jay-babu/mason-null-ls.nvim",
 
 	-- Auto Comments
 	"numToStr/Comment.nvim",
@@ -95,5 +95,14 @@ return {
   "tpope/vim-fugitive",
 
   -- Tmux stuff
-  "christoomey/vim-tmux-navigator"
+  "christoomey/vim-tmux-navigator",
+
+  -- Formatting
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
+
+  -- Linting
+  "mfussenegger/nvim-lint"
 }
