@@ -93,16 +93,18 @@ return {
   "tpope/vim-dadbod",
   -- Vim Git Integration
   "tpope/vim-fugitive",
+  -- Vim Sessions
+  "tpope/vim-obsession",
 
   -- Tmux stuff
   "christoomey/vim-tmux-navigator",
 
   -- Formatting
-  {
-    'stevearc/conform.nvim',
-    opts = {},
-  },
+  { 'stevearc/conform.nvim', opts = {} },
 
   -- Linting
-  "mfussenegger/nvim-lint"
+  "mfussenegger/nvim-lint",
+
+  -- Nvim Silicon (Code Screenshot/Snapshot)
+  { "michaelrommel/nvim-silicon", cmd = "Silicon", lazy = true },
 }
