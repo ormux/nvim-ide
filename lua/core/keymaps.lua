@@ -77,3 +77,6 @@ keymap('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
 
 -- Noice
 keymap('n', '<leader>nd', '<CMD>NoiceDismiss<CR>', opts)
+
+-- Silicon
+keymap('v', '<leader>sc', '<CMD>Silicon<CR>', opts)

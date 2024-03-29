@@ -17,6 +17,7 @@ local servers = {
   "lua_ls",
   "pylsp",
   "tsserver",
+  "perlnavigator"
 }
 
 mason_lspconfig.setup({
