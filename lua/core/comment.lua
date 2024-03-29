@@ -13,7 +13,7 @@ end
 comment.setup {
   padding = true,
   sticky = true,
-  ignore = nil,
+  ignore = '^$',
   toggler = {
     line = '<C-c>',
     block = '<C-x>',
