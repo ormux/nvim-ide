@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins_status_ok, plugins = pcall(require, "core.plugins")
+local plugins_status_ok, plugins = pcall(require, "tatum.lazy.plugins")
 if not plugins_status_ok then
 	vim.notify([[failed to load plugins.lua]])
 	return

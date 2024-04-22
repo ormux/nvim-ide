@@ -4,7 +4,7 @@ if not dap_status_ok then
 	return
 end
 
-local daps_status_ok, daps = pcall(require, "core.dap")
+local daps_status_ok, daps = pcall(require, "tatum.lazy.config.dap")
 if not daps_status_ok then
 	vim.notify([[failed to configure adapters]])
 	return

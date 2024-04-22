@@ -73,10 +73,10 @@ end
 -- END LSP Keymaps
 
 local block_formatting = {
-  "tsserver",
-  "html",
+	"tsserver",
+	"html",
 	"csharp_ls",
-  "lua_ls"
+	"lua_ls"
 }
 
 function M.on_attach(client, bufnr)

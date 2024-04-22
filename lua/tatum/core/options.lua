@@ -1,6 +1,6 @@
 local options = {
 	autoindent = true,
-  smartindent = true,
+	smartindent = true,
 	backup = false,
 	-- clipboard = "unnamed,unnamedplus",
 	errorbells = false,

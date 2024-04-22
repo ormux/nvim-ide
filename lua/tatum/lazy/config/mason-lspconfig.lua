@@ -27,11 +27,11 @@ mason_lspconfig.setup({
 
 for _, server in pairs(servers) do
   local opts = {
-    on_attach = require("core.lsp.handlers").on_attach,
-    capabilities = require("core.lsp.handlers").capabilities,
+    on_attach = require("tatum.lazy.config.lsp.handlers").on_attach,
+    capabilities = require("tatum.lazy.config.lsp.handlers").capabilities,
   }
 
-  local has_opts, server_opts = pcall(require, "core.lsp.settings." .. server)
+  local has_opts, server_opts = pcall(require, "tatum.lazy.config.lsp.settings." .. server)
   if has_opts then
     opts = vim.tbl_deep_extend("force", server_opts, opts)
   end

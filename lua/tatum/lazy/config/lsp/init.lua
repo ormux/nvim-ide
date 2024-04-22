@@ -4,4 +4,4 @@ if not status_ok then
   return
 end
 
-require("core.lsp.handlers").setup()
+require("tatum.lazy.config.lsp.handlers").setup()
