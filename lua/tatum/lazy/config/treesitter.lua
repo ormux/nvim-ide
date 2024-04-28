@@ -7,7 +7,7 @@ end
 treesitter.setup({
   modules = {},
   ignore_install = {},
-	ensure_installed = { "c", "cpp", "lua", "javascript", "typescript", "html" },
+	ensure_installed = { "c", "cpp", "lua", "javascript", "typescript", "html", "http", "java", "c_sharp", "perl" },
 	sync_install = false,
 	auto_install = true,
 
