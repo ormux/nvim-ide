@@ -5,15 +5,33 @@ if not status_ok then
 end
 
 treesitter.setup({
-  modules = {},
-  ignore_install = {},
-	ensure_installed = { "c", "cpp", "lua", "javascript", "typescript", "html", "http", "java", "c_sharp", "perl" },
+	modules = {},
+	ignore_install = {},
+	ensure_installed = {
+		"asm",
+		"awk",
+		"c",
+		"cpp",
+		"c_sharp",
+		"css",
+		"html",
+		"http",
+		"java",
+		"javascript",
+		"lua",
+		"perl",
+		"php",
+		"python",
+		"scss",
+		"typescript",
+		"vimdoc",
+	},
 	sync_install = false,
 	auto_install = true,
 
 	highlight = {
 		enable = true,
-    use_languagetree = true,
+		use_languagetree = true,
 		additional_vim_regex_highlighting = false,
 	},
 	indent = { enable = true },
