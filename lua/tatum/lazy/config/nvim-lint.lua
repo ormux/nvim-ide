@@ -6,8 +6,8 @@ end
 lint.linters_by_ft = {
   python = { "flake8" },
 	cpp = { "cpplint" },
-	javascript = { "eslint" },
-	typescript = { "eslint" },
+	javascript = { "eslint_d" },
+	typescript = { "eslint_d" },
 	lua = { "selene" },
 	sh = { "shellcheck" },
 	zsh = { "shellcheck" },
