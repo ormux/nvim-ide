@@ -18,7 +18,7 @@ local C = {
 	"conform-nvim",
 	"mason-nvim-dap",
 	"nvim-dap-ui",
-	-- "rest-nvim",
+	"rest-nvim",
 	"nvim-lint",
 	"nvim-silicon",
 }
