@@ -12,8 +12,8 @@ end
 
 -- returns true if char before cursor is a space (%s) OR col is 0
 local function check_back_space()
-  local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 local kind_icons = {
@@ -53,8 +53,8 @@ cmp.setup({
 	},
 	--:help cmp-mapping
 	mapping = cmp.mapping.preset.insert({
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -113,4 +113,12 @@ cmp.setup({
 	experimental = {
 		ghost_text = false,
 	},
+	enabled = function() -- disable when writing a comment
+		local context = require("cmp.config.context")
+		if vim.api.nvim_get_mode().mode == "c" then
+			return true
+		end
+
+		return (not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment"))
+	end,
 })
