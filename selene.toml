@@ -1,1 +1,4 @@
 std="lua54+nvim"
+
+[vim]
+any = true
