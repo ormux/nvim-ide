@@ -13,6 +13,7 @@ local C = {
 	"noice",
 	"colorizer",
 	"telescope",
+	"fzf-lua",
 	"mason",
 	"conform",
 	"mason-lspconfig",
@@ -23,6 +24,9 @@ local C = {
 	"rest-nvim",
 	"nvim-lint",
 	"nvim-silicon",
+	"markdown-preview",
+	"obsidian",
+	"vim-fugitive",
 }
 for _, config in ipairs(C) do
 	require("tatum.lazy.config." .. config)
