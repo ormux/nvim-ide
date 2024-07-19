@@ -57,7 +57,7 @@ local function lsp_keymaps(bufnr)
   keymap("n", "[d", vim.diagnostic.goto_prev, defopts)
   keymap("n", "]d", vim.diagnostic.goto_next, defopts)
   keymap("n", "gl", vim.diagnostic.open_float, defopts)
-  keymap("n", "<LocalLeader>q", vim.diagnostic.setloclist, defopts)
+  keymap("n", "<localleader>q", vim.diagnostic.setloclist, defopts)
 
   keymap("n", "gD", vim.lsp.buf.declaration, bufopts)
   keymap("n", "gd", vim.lsp.buf.definition, bufopts)
@@ -66,6 +66,10 @@ local function lsp_keymaps(bufnr)
 
   keymap("n", "K", vim.lsp.buf.hover, bufopts)
   keymap("n", "<localleader>m", vim.lsp.buf.signature_help, bufopts)
+  keymap("n", "<leader>re", vim.lsp.buf.rename, bufopts)
+  keymap("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+  keymap("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+
   -- :help user-commands
   vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 end
