@@ -1,5 +1,5 @@
 local options = {
-	autoindent = true,
+	autoindent = false,
 	smartindent = true,
 	backup = false,
 	-- clipboard = "unnamed,unnamedplus",
