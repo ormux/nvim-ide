@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -12,20 +12,7 @@ vim.g.maplocalleader = "\\"
 -- c = commmand
 
 keymap("i", "jk", "<ESC>", opts)
-keymap("n", "<leader>y", [["+y]], opts)
-keymap("v", "<leader>y", [["+y]], opts)
-
--- Split Navigation (replaced by vim-tmux-navigator)
--- keymap("n", "<C-h>", "<CMD>wincmd h<CR>", opts)
--- keymap("n", "<C-j>", "<CMD>wincmd j<CR>", opts)
--- keymap("n", "<C-k>", "<CMD>wincmd k<CR>", opts)
--- keymap("n", "<C-l>", "<CMD>wincmd l<CR>", opts)
-
---https://github.com/rcarriga/nvim-dap-ui/issues/243#issuecomment-1441514038
-keymap("t", "<C-h>", "<CMD>wincmd h<CR>", opts)
-keymap("t", "<C-j>", "<CMD>wincmd j<CR>", opts)
-keymap("t", "<C-k>", "<CMD>wincmd k<CR>", opts)
-keymap("t", "<C-l>", "<CMD>wincmd l<CR>", opts)
+keymap({ "n", "v" }, "<leader>y", [["+y]], opts)
 
 keymap("n", "<leader>vs", "<CMD>vsplit<CR>", opts)
 keymap("n", "<leader>hs", "<CMD>split<CR>", opts)
@@ -70,13 +57,22 @@ keymap("n", "<leader>l", "<CMD>!xelatex '%'<CR>", opts)
 keymap("n", "<leader>k", "<CMD>!xelatex --shell-escape 'main'<CR>", opts)
 
 -- Telescope
-keymap('n', '<leader>ff', '<CMD>Telescope find_files<CR>', opts)
-keymap('n', '<leader>fg', '<CMD>Telescope live_grep<CR>', opts)
-keymap('n', '<leader>fb', '<CMD>Telescope buffers<CR>', opts)
-keymap('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
+-- keymap('n', '<leader>ff', '<CMD>Telescope find_files<CR>', opts)
+-- keymap('n', '<leader>fg', '<CMD>Telescope live_grep<CR>', opts)
+-- keymap('n', '<leader>fb', '<CMD>Telescope buffers<CR>', opts)
+-- keymap('n', '<leader>fh', '<CMD>Telescope help_tags<CR>', opts)
+
+-- Fzf-lua
+keymap("n", "<leader>ff", "<CMD>FzfLua files<CR>", opts)
+keymap("n", "<leader>fg", "<CMD>FzfLua live_grep_native<CR>", opts)
+keymap("n", "<leader>fb", "<CMD>FzfLua buffers<CR>", opts)
+keymap("n", "<leader>fh", "<CMD>FzfLua helptags<CR>", opts)
 
 -- Noice
-keymap('n', '<leader>nd', '<CMD>NoiceDismiss<CR>', opts)
+keymap("n", "<leader>nd", "<CMD>NoiceDismiss<CR>", opts)
 
 -- Silicon
-keymap('v', '<leader>sc', '<CMD>Silicon<CR>', opts)
+keymap("v", "<leader>sc", "<CMD>Silicon<CR>", opts)
+
+-- Markdown Preview
+keymap("n", "<leader>m", "<CMD>MarkdownPreviewToggle<CR>", opts)
