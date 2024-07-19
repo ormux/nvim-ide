@@ -10,17 +10,24 @@ conform.formatters.prettier = {
 	prepend_args = { "--jsx-single-quote", "true" },
 }
 
+conform.formatters.djlint = {
+	prepend_args = { "--indent", "2" },
+}
+
 conform.formatters_by_ft = {
-  lua = { "stylua" },
-  python = { "isort", "black" },
+	lua = { "stylua" },
+	python = { "isort", "black" },
+	html = { "prettier" },
+	htmldjango = { "djlint" },
+	scss = { "prettier" },
 
-  javascript = { "prettier" },
-  typescript = { "prettier" },
-  typescriptreact = { "prettier" },
+	javascript = { "prettier" },
+	typescript = { "prettier" },
+	typescriptreact = { "prettier" },
 
-  cs = { "csharpier" },
-  sh = { "shfmt" },
-  zsh = { "shfmt" },
+	cs = { "csharpier" },
+	sh = { "shfmt" },
+	zsh = { "shfmt" },
 }
 
 conform.setup()
