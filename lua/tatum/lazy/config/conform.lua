@@ -20,6 +20,7 @@ conform.formatters_by_ft = {
 	html = { "prettier" },
 	htmldjango = { "djlint" },
 	scss = { "prettier" },
+	json = { "prettier" },
 
 	javascript = { "prettier" },
 	typescript = { "prettier" },
