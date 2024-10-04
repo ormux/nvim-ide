@@ -16,8 +16,8 @@ local servers = {
   "jsonls",
   "lua_ls",
   "pylsp",
-  "tsserver",
-  "perlnavigator"
+  "ts_ls",
+  "perlnavigator",
 }
 
 mason_lspconfig.setup({
