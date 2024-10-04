@@ -25,7 +25,7 @@ local C = {
 	"nvim-lint",
 	"nvim-silicon",
 	"markdown-preview",
-	"obsidian",
+	-- "obsidian",
 	"vim-fugitive",
 }
 for _, config in ipairs(C) do

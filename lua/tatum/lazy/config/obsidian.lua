@@ -10,19 +10,19 @@ obsidian.setup({
   ui = {
     enable = false,
   },
-	workspaces = {
-		{
-			name = "Computer Science",
-			path = "~/Obsidian/Computer Science",
-		},
-		{
-			name = "Artificial Intelligence",
-			path = "~/Obsidian/Artificial Intelligence",
-		},
-	},
-  templates = {
-    folder = "ObsidianTemplates",
-    date_format = "%Y-%m-%d %a",
-    time_format = "%H:%M"
-  },
+	-- workspaces = {
+	-- 	{
+	-- 		name = "Computer Science",
+	-- 		path = "~/Obsidian/Computer Science",
+	-- 	},
+	-- 	{
+	-- 		name = "Artificial Intelligence",
+	-- 		path = "~/Obsidian/Artificial Intelligence",
+	-- 	},
+	-- },
+ --  templates = {
+ --    folder = "ObsidianTemplates",
+ --    date_format = "%Y-%m-%d %a",
+ --    time_format = "%H:%M"
+ --  },
 })
