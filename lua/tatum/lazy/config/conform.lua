@@ -16,7 +16,7 @@ conform.formatters.djlint = {
 
 conform.formatters_by_ft = {
 	lua = { "stylua" },
-	python = { "isort", "black" },
+	python = { "black", "isort" },
 	html = { "prettier" },
 	htmldjango = { "djlint" },
 	scss = { "prettier" },
