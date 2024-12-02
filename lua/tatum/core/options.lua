@@ -2,9 +2,8 @@ local options = {
 	autoindent = false,
 	smartindent = true,
 	backup = false,
-	-- clipboard = "unnamed,unnamedplus",
 	errorbells = false,
-	expandtab = true,
+	expandtab = false,
 	hlsearch = true,
 	ignorecase = true,
 	incsearch = true,
@@ -18,11 +17,11 @@ local options = {
 	tabstop = 2,
 	wildmenu = true,
 	writebackup = false,
-  modeline = false,
-  numberwidth = 2,
-  termguicolors = true,
-  undofile = true,
-  wrap = true,
+	modeline = false,
+	numberwidth = 2,
+	termguicolors = true,
+	undofile = true,
+	wrap = true,
 }
 
 for key, val in pairs(options) do
