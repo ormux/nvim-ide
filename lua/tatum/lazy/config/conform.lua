@@ -7,7 +7,7 @@ end
 conform.lsp_fallback = true
 
 conform.formatters.prettier = {
-	prepend_args = { "--jsx-single-quote", "true" },
+	prepend_args = { "--jsx-single-quote", "true", "--use-tabs", "true"},
 }
 
 conform.formatters.djlint = {
